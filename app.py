@@ -24,3 +24,15 @@ build_histogram = st.checkbox('Construir un histograma')
 
 if build_histogram: # si la casilla de verificación está seleccionada
     st.write('Construir un histograma para la columna odómetro')
+
+scatter_button = st.button('Construir gráfico de dispersión')
+
+if scatter_button:
+    # Escribir un mensaje
+    st.write('Creación de un gráfico de dispersión para el conjunto de datos de anuncios de venta de coches')
+
+    # Construcción del gráfico de dispersión
+    scatter_fig = px.scatter(car_data, x="odometer", y="price", title="Relación entre odómetro y precio")
+
+    # Mostrar el gráfico de dispersión
+    st.plotly_chart(scatter_fig, use_container_width=True)
